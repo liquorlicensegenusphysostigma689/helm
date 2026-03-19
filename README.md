@@ -43,9 +43,9 @@ Claude Code reads and writes it natively. Git gives version history. Files are h
 
 ```
                     ┌─────────────┐
-                    │  Overnight   │
-                    │  Cron Jobs   │
-                    │  (hub/)      │
+                    │  Overnight  │
+                    │  Cron Jobs  │
+                    │  (hub/)     │
                     └──────┬──────┘
                            │ writes context
                            v
@@ -276,7 +276,11 @@ See **[SETUP.md](SETUP.md)** for the full walkthrough.
 
 The design philosophy draws from these works:
 
-[Acceptance and Commitment Therapy](https://en.wikipedia.org/wiki/Acceptance_and_commitment_therapy) (Steven Hayes) &middot; [Tiny Habits](https://tinyhabits.com/) (BJ Fogg) &middot; Stoic practical philosophy &middot; [The War of Art](https://stevenpressfield.com/books/the-war-of-art/) (Steven Pressfield) &middot; [Four Thousand Weeks](https://www.oliverburkeman.com/books) (Oliver Burkeman) &middot; [PARA Method](https://fortelabs.com/blog/para/) (Tiago Forte)
+[Acceptance and Commitment Therapy](https://en.wikipedia.org/wiki/Acceptance_and_commitment_therapy) (Steven Hayes)
+[Tiny Habits](https://tinyhabits.com/) (BJ Fogg) &middot; Stoic practical philosophy
+[The War of Art](https://stevenpressfield.com/books/the-war-of-art/) (Steven Pressfield)
+[Four Thousand Weeks](https://www.oliverburkeman.com/books) (Oliver Burkeman)
+[PARA Method](https://fortelabs.com/blog/para/) (Tiago Forte)
 
 Technical patterns adapted from [Anthropic Knowledge Work Plugins](https://github.com/anthropics/knowledge-work-plugins), [Longshore Plugins + Skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills), [COG Second Brain](https://github.com/huytieu/COG-second-brain), [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices), and [HumanLayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md).
 
